@@ -1,15 +1,24 @@
+:root {
+    --brand-color: #dc0000;
+    --brand-darker-color: #a50404;
+}
+
+
 * {
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     font-family: sans-serif;
+    font-size: 1.6rem
 }
 
 .page {
-    width: 100%;
     min-height: 100vh;
-    background-color: rosybrown;
 }
 
 .page-center {
@@ -18,23 +27,12 @@ body {
     align-items: center;
 }
 
-.hide {
-    display: none;
-}
-
-.page:nth-of-type(odd) {
-    background-color: mistyrose;
-}
 
 /* Form */
-:root {
-    --brand-color: #dc0000;
-    --brand-darker-color: #a50404;
-}
 
 .row {
     display: flex;
-    margin-bottom: 16px;
+    margin-bottom: 2rem;
 }
 
 .row-right-alined {
@@ -49,25 +47,11 @@ body {
     background-position: center bottom;
 }
 
-.hero:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.1);
-    width: 100%;
-    height: 100%;
-    content: '';
-}
-
-.hero-content {
-    z-index: 1;
-}
-
 .hero-headline {
     color: rgba(255,255,255,0.8);
     text-shadow: 0 0 60px rgba(255,255,255,0.8),
         0 0 30px rgba(0,0,0,0.9);
-    font-size: 48px;
+    font-size: 3.5em;
     font-weight: bold;
 }
 
@@ -76,13 +60,14 @@ body {
     display: flex;
 }
 
-.input-container:not(:last-child) .input-field {
-    margin-right: 16px;
+
+.input-container input[name="from"] {
+    margin-right: 1em;
 }
 
 .input-label {
     background-color: var(--brand-color);
-    padding: 10px;
+    padding: 1rem;
     line-height: 1;
     color: white;
 }
@@ -121,4 +106,33 @@ body {
 
 .button-secondary:hover {
     background-color: rgba(255,255,255,0.8);
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        background-position: left bottom;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .page-center {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .row {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .row > button, .row > div > input {
+        width: 100%;
+    }
+
+    .input-container input[name="from"] {
+        margin-right: 0px;
+    }
+ 
 }
